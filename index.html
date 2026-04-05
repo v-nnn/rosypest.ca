@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rosy Pest Control | Surrey, White Rock, Delta, Langley</title>
+  <meta name="description" content="Rosy Pest Control provides clinical-grade pest management in Surrey, White Rock, Delta, and Langley. Licensed, insured, and locally owned.">
+  <meta property="og:title" content="Rosy Pest Control">
+  <meta property="og:description" content="Clinical-grade expertise. Neighbourhood prices.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --forest: #123628;
+      --moss: #1d4f37;
+      --pine: #0d281d;
+      --gold: #c8a84b;
+      --gold-deep: #a8872e;
+      --cream: #f5f0e8;
+      --ivory: #faf8f4;
+      --text: #1d3025;
+      --muted: #5a6d62;
+      --line: #d8d3c8;
+      --max: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'DM Sans', Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 95% 3%, rgba(200, 168, 75, 0.09) 0, rgba(200, 168, 75, 0) 20%),
+        linear-gradient(180deg, #fdfbf7 0%, #f4efe6 100%);
+      line-height: 1.5;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(var(--max), 92vw);
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(8px);
+      background: rgba(18, 54, 40, 0.92);
+      border-bottom: 1px solid rgba(200, 168, 75, 0.2);
+    }
+
+    .header-inner {
+      width: min(var(--max), 92vw);
+      margin-inline: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.85rem 0;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: grid;
+      gap: 0.08rem;
+    }
+
+    .brand strong {
+      font-family: 'Playfair Display', Georgia, serif;
+      color: var(--cream);
+      font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+      line-height: 1.05;
+      letter-spacing: 0.2px;
+    }
+
+    .brand span {
+      color: rgba(245, 240, 232, 0.66);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-size: 0.67rem;
+      font-weight: 600;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      transition: transform 0.22s ease, box-shadow 0.22s ease, background-color 0.22s ease;
+      border: 1px solid transparent;
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(90deg, var(--gold), #dfbf5d);
+      color: #1a261e;
+      padding: 0.58rem 1rem;
+      box-shadow: 0 8px 18px rgba(18, 54, 40, 0.35);
+    }
+
+    .btn-secondary {
+      border-color: rgba(245, 240, 232, 0.35);
+      color: var(--cream);
+      padding: 0.55rem 0.95rem;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(130deg, rgba(13, 40, 29, 0.97), rgba(29, 79, 55, 0.95)),
+        repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.03) 0, rgba(255, 255, 255, 0.03) 4px, transparent 4px, transparent 12px);
+      color: var(--cream);
+      padding: clamp(4.2rem, 11vw, 8rem) 0 clamp(3rem, 8vw, 5rem);
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      width: min(52vw, 480px);
+      aspect-ratio: 1;
+      right: -13%;
+      top: -20%;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(200, 168, 75, 0.16), rgba(200, 168, 75, 0));
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      width: min(var(--max), 92vw);
+      margin-inline: auto;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: clamp(1.2rem, 3vw, 2.6rem);
+      align-items: end;
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      border: 1px solid rgba(200, 168, 75, 0.5);
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      font-size: 0.69rem;
+      font-weight: 700;
+      padding: 0.45rem 0.72rem;
+      margin-bottom: 1.1rem;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2rem, 6vw, 4.1rem);
+      line-height: 1.02;
+      margin-bottom: 0.9rem;
+      max-width: 16ch;
+      text-wrap: balance;
+    }
+
+    h1 .gold {
+      color: var(--gold);
+    }
+
+    .hero p {
+      max-width: 58ch;
+      color: rgba(245, 240, 232, 0.82);
+      font-size: clamp(1rem, 1.9vw, 1.13rem);
+      line-height: 1.62;
+      margin-bottom: 1.3rem;
+    }
+
+    .hero-card {
+      background: rgba(245, 240, 232, 0.95);
+      color: var(--text);
+      border: 1px solid rgba(200, 168, 75, 0.35);
+      border-radius: 18px;
+      padding: clamp(1rem, 2.6vw, 1.3rem);
+      box-shadow: 0 24px 36px rgba(8, 22, 16, 0.28);
+    }
+
+    .hero-card h2 {
+      font-size: 0.83rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #4f6358;
+      margin-bottom: 0.35rem;
+    }
+
+    .hero-card .offer {
+      font-family: 'Playfair Display', Georgia, serif;
+      color: var(--pine);
+      font-size: clamp(1.38rem, 3.7vw, 2rem);
+      line-height: 1.08;
+      margin-bottom: 0.55rem;
+    }
+
+    .hero-card p {
+      margin: 0;
+      color: #2f4438;
+      font-size: 0.95rem;
+      line-height: 1.52;
+    }
+
+    .hero-contact {
+      margin-top: 0.9rem;
+      padding-top: 0.8rem;
+      border-top: 1px solid rgba(18, 54, 40, 0.18);
+      display: flex;
+      gap: 0.55rem;
+      flex-wrap: wrap;
+    }
+
+    .section {
+      padding: clamp(3rem, 6vw, 5rem) 0;
+    }
+
+    .section-head {
+      margin-bottom: clamp(1.2rem, 3vw, 1.8rem);
+      max-width: 72ch;
+    }
+
+    .section-kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-weight: 700;
+      color: #607469;
+      font-size: 0.72rem;
+      margin-bottom: 0.48rem;
+    }
+
+    .section h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.6rem, 4vw, 2.5rem);
+      line-height: 1.1;
+      color: var(--pine);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-desc {
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 1rem;
+    }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.9rem;
+    }
+
+    .pillar {
+      display: grid;
+      grid-template-columns: 4px 1fr;
+      gap: 0.9rem;
+      padding: 1rem;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    .pillar::before {
+      content: '';
+      border-radius: 4px;
+      background: linear-gradient(180deg, var(--gold), var(--gold-deep));
+    }
+
+    .pillar h3 {
+      margin-bottom: 0.35rem;
+      color: var(--forest);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.79rem;
+    }
+
+    .pillar p {
+      color: #5c6f64;
+      font-size: 0.96rem;
+      line-height: 1.55;
+    }
+
+    .services-wrap {
+      background: #fff;
+      border-block: 1px solid var(--line);
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      margin-top: 0.3rem;
+    }
+
+    .chip {
+      border: 1px solid #d0cabf;
+      background: var(--cream);
+      color: var(--forest);
+      border-radius: 999px;
+      padding: 0.42rem 0.85rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .contact-band {
+      background: linear-gradient(100deg, var(--forest), #184633 62%, #1f5b3f 100%);
+      color: var(--cream);
+      border-top: 4px solid var(--gold);
+      border-bottom: 4px solid rgba(12, 30, 22, 0.45);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 1.1rem;
+      align-items: center;
+      padding: clamp(2.1rem, 4.7vw, 3.1rem) 0;
+    }
+
+    .contact-copy h2 {
+      color: #f9f6ef;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-copy p {
+      color: rgba(245, 240, 232, 0.84);
+      font-size: 1rem;
+      line-height: 1.62;
+      margin-bottom: 1rem;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 0.75rem;
+      background: rgba(0, 0, 0, 0.16);
+      border: 1px solid rgba(245, 240, 232, 0.14);
+      border-radius: 16px;
+      padding: 0.95rem;
+    }
+
+    .contact-item {
+      display: grid;
+      gap: 0.1rem;
+      border-bottom: 1px solid rgba(245, 240, 232, 0.14);
+      padding-bottom: 0.65rem;
+    }
+
+    .contact-item:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .contact-label {
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-size: 0.7rem;
+      color: rgba(245, 240, 232, 0.58);
+      font-weight: 700;
+    }
+
+    .contact-value {
+      font-size: clamp(1.15rem, 2.5vw, 1.45rem);
+      font-weight: 700;
+      color: #fff6de;
+      line-height: 1.2;
+      word-break: break-word;
+    }
+
+    .site-footer {
+      background: #081c13;
+      color: rgba(245, 240, 232, 0.5);
+      text-align: center;
+      padding: 1rem 0 1.2rem;
+      font-size: 0.88rem;
+      border-top: 1px solid rgba(200, 168, 75, 0.3);
+    }
+
+    .site-footer strong {
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pillars-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .header-inner {
+        padding: 0.72rem 0;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .header-actions {
+        width: 100%;
+        justify-content: stretch;
+      }
+
+      .header-actions .btn {
+        flex: 1;
+      }
+
+      .brand {
+        width: 100%;
+      }
+
+      .header-inner {
+        flex-wrap: wrap;
+      }
+
+      h1 {
+        max-width: 14ch;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="Rosy Pest Control home">
+        <strong>Rosy Pest Control</strong>
+        <span>Pest Management Professionals</span>
+      </a>
+      <div class="header-actions">
+        <a class="btn btn-secondary" href="mailto:info@rosypest.ca">Email Us</a>
+        <a class="btn btn-primary" href="tel:+16046144884">Call (604) 614-4884</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow">Surrey · White Rock · Delta · Langley</span>
+          <h1>Clinical-Grade Expertise.<br><span class="gold">Neighbourhood Prices.</span></h1>
+          <p>Rosy Pest Control is a local, owner-operated team serving homes and businesses across the Lower Mainland. You get careful, professional treatment without corporate markups.</p>
+          <a class="btn btn-primary" href="tel:+16046144884">Book a Free Exterior Inspection</a>
+        </div>
+
+        <aside class="hero-card" aria-label="introductory offer">
+          <h2>Introductory Offer</h2>
+          <div class="offer">Free Exterior Inspection</div>
+          <p>Get a no-obligation visit, a clear explanation of what is happening on your property, and straightforward recommendations.</p>
+          <div class="hero-contact">
+            <a class="btn btn-secondary" href="mailto:info@rosypest.ca">info@rosypest.ca</a>
+            <a class="btn btn-secondary" href="tel:+16046144884">(604) 614-4884</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section container" id="about">
+      <div class="section-head">
+        <p class="section-kicker">Why Homeowners Choose Rosy</p>
+        <h2>Trusted Local Service With Professional Standards</h2>
+        <p class="section-desc">We provide detailed inspections, practical treatment plans, and dependable follow-through. Our approach is built on clinical precision, clear communication, and respect for your time.</p>
+      </div>
+
+      <div class="pillars-grid">
+        <article class="pillar">
+          <div>
+            <h3>Licensed and Insured</h3>
+            <p>Licensed under BC Integrated Pest Management requirements and fully insured for peace of mind.</p>
+          </div>
+        </article>
+        <article class="pillar">
+          <div>
+            <h3>Competitive Rates</h3>
+            <p>No franchise fees or big-company overhead. Better value without sacrificing professionalism.</p>
+          </div>
+        </article>
+        <article class="pillar">
+          <div>
+            <h3>Locally Owned</h3>
+            <p>You are working with a local business invested in your neighbourhood and reputation.</p>
+          </div>
+        </article>
+        <article class="pillar">
+          <div>
+            <h3>Reliable Service</h3>
+            <p>Prompt arrivals, clear recommendations, and thorough treatments tailored to your property.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section services-wrap" id="services">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker">We Handle</p>
+          <h2>Common Residential and Commercial Pest Issues</h2>
+          <p class="section-desc">From one-time concerns to ongoing prevention, we build plans around your property and the pests active in your area.</p>
+        </div>
+
+        <div class="chip-row" aria-label="services list">
+          <span class="chip">Ants and Crawling Insects</span>
+          <span class="chip">Rodents and Mice</span>
+          <span class="chip">Wasps and Hornets</span>
+          <span class="chip">Bed Bugs</span>
+          <span class="chip">Cockroaches</span>
+          <span class="chip">Silverfish and Moths</span>
+          <span class="chip">Bee-Related Concerns</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-band" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-copy">
+          <p class="section-kicker">Get Started</p>
+          <h2>Book Your Free Exterior Inspection</h2>
+          <p>Call, text, or email and we will schedule a convenient time. We will assess the issue, explain next steps, and provide honest pricing before any work begins.</p>
+          <a class="btn btn-primary" href="tel:+16046144884">Call or Text Now</a>
+        </div>
+
+        <div class="contact-list">
+          <div class="contact-item">
+            <span class="contact-label">Call or Text</span>
+            <a class="contact-value" href="tel:+16046144884">(604) 614-4884</a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-label">Email</span>
+            <a class="contact-value" href="mailto:info@rosypest.ca">info@rosypest.ca</a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-label">Service Area</span>
+            <span class="contact-value">Surrey · White Rock · Delta · Langley</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    Licensed · Insured · BC Registered<br>
+    <strong>Rosy Pest Control</strong> serving Surrey, White Rock, Delta, and Langley
+  </footer>
+</body>
+</html>
